@@ -1,0 +1,41 @@
+<div class="d-flex">
+    <div class="sidebar d-flex flex-column p-5" style="height: 80vh; width: 250px; background-color: #a7a4e0;">
+        <a href="" style="text-decoration: none; color: white; font-weight: 700;" routerLink="/dashboard">Dashboard</a>
+        <a href="" style="text-decoration: none; color: white; font-weight: 700;" class="mt-2"
+        routerLink="/students"
+        >Student List</a>
+    </div>
+    <div class="d-flex justify-content-center align-items-center flex-column w-100">
+        <h3 style="color: #0040ff;">Add New Student Details</h3>
+        <form class="border rounded p-5 shadow mt-5 w-50">
+            <div class="mt-3">
+                <input
+                [(ngModel)]="student.id" name="sid"
+                type="text" placeholder="Student Id" class="form-control">
+            </div>
+            <div class="mt-3">
+                <input
+                [(ngModel)]="student.email" name="semail"
+                type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="mt-3">
+                <input
+                [(ngModel)]="student.name" name="sname"
+                type="text" placeholder="Name" class="form-control">
+            </div>
+            <div class="form-floating mt-3">
+                <select
+                [(ngModel)]="student.status" name="sstatus"
+                class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                  <option value="1">Active</option>
+                  <option value="0">Inactive</option>
+                </select>
+                <label for="floatingSelect">Student Status</label>
+              </div>
+              <div class="mt-3">
+                <button class="btn btn-outline-warning" (click)="clearFields()" >CANCEL</button>
+                <button class="btn btn-outline-success ms-5" (click)="addStudent()">ADD</button>
+              </div>
+        </form>
+    </div>
+</div>
